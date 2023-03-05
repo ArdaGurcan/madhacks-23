@@ -624,13 +624,18 @@ function setup() {
   });
   for (let y = 0; y < h; y++) {
     for (let x = 0; x < w; x++) {
-      if (grid[y][x] == 1) fill(50);
-      else if (grid[y][x] == 0) fill(255);
-      else if (grid[y][x] == 2) fill("orange");
+      if (grid[y][x] == 1) fill("#006b6b");
+      else if (grid[y][x] == 0) fill("#60b95b");
+      else if (grid[y][x] == 2) fill("#bae040");
       rect(x * d, y * d, d, d);
     }
   }
 }
+// #ff9835
+// #bae040
+// #60b95b
+// #006b6b
+// #5581d1
 
 ///////////// (j * 10 + i) = row number plus x position
 function draw() {}
@@ -662,9 +667,9 @@ function mousePressed() {
     // }
     for (let y = 0; y < h; y++) {
       for (let x = 0; x < w; x++) {
-        if (grid[y][x] == 1) fill(50);
-        else if (grid[y][x] == 0) fill(255);
-        else if (grid[y][x] == 2) fill("orange");
+        if (grid[y][x] == 1) fill("#006b6b");
+        else if (grid[y][x] == 0) fill("#60b95b");
+        else if (grid[y][x] == 2) fill("#bae040");
         rect(x * d, y * d, d, d);
       }
     }
