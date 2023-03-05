@@ -642,25 +642,26 @@ function draw() {}
 
 function mousePressed() {
   if (mouseX > 0 && mouseX < 500 && mouseY > 0 && mouseY < 500) {
-    let hotspots = [
-      [2, 12, "IMG_2785.jpg"],
-      [2, 24, "IMG_2784.jpg"],
-      [2, 32, "IMG_2783.jpg"],
-      [13, 28, "IMG_2781.jpg"],
-      [13, 33, "IMG_2782.jpg"],
-      [13, 24, "IMG_2782.jpg"],
-    ];
+    if (mouseButton === LEFT) {
+      let hotspots = [
+        [2, 12, "IMG_2785.jpg"],
+        [2, 24, "IMG_2784.jpg"],
+        [2, 32, "IMG_2783.jpg"],
+        [13, 28, "IMG_2781.jpg"],
+        [13, 33, "IMG_2782.jpg"],
+        [13, 24, "IMG_2782.jpg"],
+      ];
 
-    let smallestDistance = 100000;
-    let closest = [2, 12];
+      let smallestDistance = 100000;
+      let closest = [2, 12];
 
-    for (let i = 0; i < hotspots.length; i++) {
-      let dist = (mouseY - hotspots[i][1] * d) ** 2 + (mouseX - hotspots[i][0] * d) ** 2;
-      if (dist < smallestDistance) {
-        smallestDistance = dist;
-        closest = hotspots[i];
+      for (let i = 0; i < hotspots.length; i++) {
+        let dist = (mouseY - hotspots[i][1] * d) ** 2 + (mouseX - hotspots[i][0] * d) ** 2;
+        if (dist < smallestDistance) {
+          smallestDistance = dist;
+          closest = hotspots[i];
+        }
       }
-    }
 
     // if (smallestDistance < 9 * d * d) {
     canvasHandler(closest[2]);
