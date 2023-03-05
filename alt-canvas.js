@@ -680,12 +680,15 @@ function mousePressed() {
       console.log(Math.floor(mouseX / d) + ", " + Math.floor(mouseY / d));
     } else if (mouseButton === RIGHT) {
       // Math.floor(mouseX / d) + ", " + Math.floor(mouseY / d)
-      var graph = new Graph(grid);
-      var start = graph.grid[12][1];
-      var end = graph.grid[Math.floor(mouseY / d)][Math.floor(mouseX / d)];
-      result = astar.search(graph, start, end);
+      var start = [12, 1];
+      var end = [Math.floor(mouseY / d), Math.floor(mouseX / d)];
+      result = findPath(grid, start, end)
       console.log(result);
-
+      
+      if (result == null || result == undefined || result.length == 0) {
+        return false;
+      }
+      
       var myCanvas = createCanvas(550, 562);
       myCanvas.parent("newCanvas");
       background(50);
@@ -697,7 +700,7 @@ function mousePressed() {
         }
       }
       result.forEach(node => {
-        grid[node.x][node.y] = 2;
+        grid[node[0]][node[1]] = 2;
       });
       for (let y = 0; y < h; y++) {
         for (let x = 0; x < w; x++) {
