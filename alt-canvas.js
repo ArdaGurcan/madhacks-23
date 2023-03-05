@@ -640,7 +640,7 @@ function setup() {
 function draw() {}
 
 function mousePressed() {
-  if (mouseX > 0 && mouseX < 500 && mouseY > 0 && mouseY < 500) {
+  if (mouseX > 0 && mouseX < 550 && mouseY > 0 && mouseY < 562) {
     if (mouseButton === LEFT) {
       let hotspots = [
         [2, 12, "IMG_2785.jpg"],
