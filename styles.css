@@ -5,6 +5,7 @@ body {
     background: #323a50;
     font-size: 30px;
     color: #fbf4ea;
+    font-family: 'Fenix', serif;
 }
 h1 {
     margin: 0px;
@@ -22,10 +23,10 @@ h1 {
 
 #panorama {
     position: relative;
-    top: 10px;
-    width: 50vw;
-    height: 495px;
-    margin-right: 5%;
+    top: 7px;
+    width: 55vw;
+    height: 560px;
+    /* margin-right: 3%; */
     border-radius: 15px;
     box-shadow: 0px 25px 0 rgba(4, 5, 23, 0.5); 
 	-webkit-box-shadow: 0px 25px 0 rgba(4, 5, 23, 0.5); 
@@ -45,7 +46,7 @@ h1 {
 
 }
 .column-container {
-    margin: 0% 5% 0%;
+    margin: 0% 2% 0%;
     text-align: center;
     text-shadow: 1.5px 1.5px 3px #182e3c93;
 }

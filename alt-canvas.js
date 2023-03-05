@@ -605,7 +605,7 @@ const grid = [
 
 var w = grid[0].length;
 var h = grid.length;
-var d = 10;
+var d = 11;
 var result;
 function setup() {
   var graph = new Graph(grid);
@@ -614,7 +614,7 @@ function setup() {
   result = astar.search(graph, start, end);
   console.log(result);
 
-  var myCanvas = createCanvas(500, 500);
+  var myCanvas = createCanvas(550, 562);
   myCanvas.parent("newCanvas");
   background(50);
   // rectMode(CENTER);
@@ -686,7 +686,7 @@ function mousePressed() {
       result = astar.search(graph, start, end);
       console.log(result);
 
-      var myCanvas = createCanvas(500, 500);
+      var myCanvas = createCanvas(550, 562);
       myCanvas.parent("newCanvas");
       background(50);
       // rectMode(CENTER);
