@@ -608,10 +608,10 @@ var h = grid.length;
 var d = 11;
 var result;
 function setup() {
-  var graph = new Graph(grid);
-  var start = graph.grid[12][1];
-  var end = graph.grid[8][11];
-  result = astar.search(graph, start, end);
+  // var graph = new Graph(grid);
+  var start = [12, 1];
+  var end = [8, 11];
+  result = findPath(grid, start, end);
   console.log(result);
 
   var myCanvas = createCanvas(550, 562);
@@ -620,7 +620,7 @@ function setup() {
   // rectMode(CENTER);
   stroke(0);
   result.forEach(node => {
-    grid[node.x][node.y] = 2;
+    grid[node[0]][node[1]] = 2;
   });
   for (let y = 0; y < h; y++) {
     for (let x = 0; x < w; x++) {
