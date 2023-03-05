@@ -612,7 +612,6 @@ function setup() {
   var start = [12, 1];
   var end = [8, 11];
   result = findPath(grid, start, end);
-  console.log(result);
 
   var myCanvas = createCanvas(550, 562);
   myCanvas.parent("newCanvas");
@@ -683,12 +682,11 @@ function mousePressed() {
       var start = [12, 1];
       var end = [Math.floor(mouseY / d), Math.floor(mouseX / d)];
       result = findPath(grid, start, end)
-      console.log(result);
       
       if (result == null || result == undefined || result.length == 0) {
         return false;
       }
-      
+
       var myCanvas = createCanvas(550, 562);
       myCanvas.parent("newCanvas");
       background(50);
