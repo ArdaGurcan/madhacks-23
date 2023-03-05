@@ -22,8 +22,20 @@ h1 {
 
 #panorama {
     width: 50vw;
-    height: 55vh;
+    height: 40vh;
     margin-right: 5%;
+    border-radius: 15px;
+    box-shadow: 0px 25px 0 rgba(4, 5, 23, 0.5); 
+	-webkit-box-shadow: 0px 25px 0 rgba(4, 5, 23, 0.5); 
+    -moz-border-radius: 10px 0 10px 10px;
+	-moz-box-shadow: 0px 25px 0 rgba(4, 5, 23, 0.5);
+}
+
+#newCanvas #defaultCanvas0{
+    border-radius: 15px;
+    box-shadow: 0px 20px 0 rgba(4, 5, 23, 0.5)  ; 
+	-webkit-box-shadow: 0px 20px 0 rgba(4, 5, 23, 0.5); 
+	-moz-box-shadow: 0px 20px 0 rgba(4, 5, 23, 0.5);
 }
 
 .caption-text {
