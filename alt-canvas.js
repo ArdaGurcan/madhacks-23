@@ -663,22 +663,52 @@ function mousePressed() {
         }
       }
 
-    // if (smallestDistance < 9 * d * d) {
-    canvasHandler(closest[2]);
-    // }
-    for (let y = 0; y < h; y++) {
-      for (let x = 0; x < w; x++) {
-        if (grid[y][x] == 1) fill("#006b6b");
-        else if (grid[y][x] == 0) fill("#60b95b");
-        else if (grid[y][x] == 2) fill("#bae040");
-        rect(x * d, y * d, d, d);
+      // if (smallestDistance < 9 * d * d) {
+      canvasHandler(closest[2]);
+      // }
+      for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+          if (grid[y][x] == 1) fill("#006b6b");
+          else if (grid[y][x] == 0) fill("#60b95b");
+          else if (grid[y][x] == 2) fill("#bae040");
+          rect(x * d, y * d, d, d);
+        }
+      }
+      fill("red");
+      ellipse(closest[0] * d, closest[1] * d, 8, 8);
+      // Math.floor(mouseX/d)*d + d/2, Math.floor(mouseY/d)*d + d/2
+      console.log(Math.floor(mouseX / d) + ", " + Math.floor(mouseY / d));
+    } else if (mouseButton === RIGHT) {
+      // Math.floor(mouseX / d) + ", " + Math.floor(mouseY / d)
+      var graph = new Graph(grid);
+      var start = graph.grid[12][1];
+      var end = graph.grid[Math.floor(mouseY / d)][Math.floor(mouseX / d)];
+      result = astar.search(graph, start, end);
+      console.log(result);
+
+      var myCanvas = createCanvas(500, 500);
+      myCanvas.parent("newCanvas");
+      background(50);
+      // rectMode(CENTER);
+      stroke(0);
+      for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+          if (grid[y][x] == 2) grid[y][x] = 1;
+        }
+      }
+      result.forEach(node => {
+        grid[node.x][node.y] = 2;
+      });
+      for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+          if (grid[y][x] == 1) fill("#006b6b");
+          else if (grid[y][x] == 0) fill("#60b95b");
+          else if (grid[y][x] == 2) fill("#bae040");
+          rect(x * d, y * d, d, d);
+        }
       }
     }
-    fill("red")
-    ellipse(closest[0] * d, closest[1] * d, 8, 8);
-    // Math.floor(mouseX/d)*d + d/2, Math.floor(mouseY/d)*d + d/2
-    console.log(Math.floor(mouseX / d) + ", " + Math.floor(mouseY / d));
+    // prevent default
+    return false;
   }
-  // prevent default
-  return false;
 }
