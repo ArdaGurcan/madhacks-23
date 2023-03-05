@@ -1,0 +1,12 @@
+#panorama {
+    width: 40vw;
+    height: 50vh;
+    margin-right: 5%;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
