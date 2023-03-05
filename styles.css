@@ -12,7 +12,7 @@ h1 {
 }
 
 .header {
-  padding: 1%;
+  padding-top: 1%;
   text-align: center;
   /* background: #1abc9c; */
   color: white;
@@ -21,8 +21,10 @@ h1 {
 }
 
 #panorama {
+    position: relative;
+    top: 10px;
     width: 50vw;
-    height: 40vh;
+    height: 495px;
     margin-right: 5%;
     border-radius: 15px;
     box-shadow: 0px 25px 0 rgba(4, 5, 23, 0.5); 
